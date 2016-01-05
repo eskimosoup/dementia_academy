@@ -1,0 +1,102 @@
+@import "variables";
+
+/*--Main--*/
+body {
+	font-family: $main_font; 
+	font-size: 14px;
+	color: #333333; 
+}
+
+
+p {
+	margin: 0px; 
+	padding: 8px 0px 8px 0px;
+}
+
+
+hr {
+	border: 0px; 
+	border-bottom: 1px solid $grey; 
+	height: 0px; 
+	clear: left; 
+	margin: 0px 0px 10px 0px; 
+	padding: 10px 0px 0px 0px;
+}
+
+
+/*--Links--*/
+a {
+  color: $green;
+	text-decoration: none;
+  &:visited, &:active {color: $green;}
+	&:hover {color: #000000; text-decoration: underline;}
+}
+
+/*--Titles--*/
+h1, h2, h3 {
+		a {
+			color: $blue;
+			text-decoration: none;
+			&:visited, &:active {color: $blue;}
+			&:hover {color: $blue; text-decoration: none;}
+		}
+}
+
+h1, .right h2 {
+	color: $blue; 
+	font-size: 24px; 
+	font-weight: bold; 
+	margin: 0px 0px 12px 0px; 
+	padding: 0px 0px 12px 0px;
+	line-height: normal;
+	background-image: url(title_bar.gif);
+	background-repeat: no-repeat;
+	background-position: bottom;
+	font-family: $round_font;
+}
+
+.content_left h1 {
+	background-image: url(title_bar_left.gif);
+}
+
+h2 {
+	color: $blue; 
+	font-size: 18px; 
+	font-weight: bold; 
+	margin: 12px 0px 0px 0px; 
+	padding: 12px 0px 0px 0px;
+	line-height: normal;
+	font-family: $round_font;
+}
+
+.right h2 {
+	background-image: url(title_bar_right.gif);
+}
+
+h3 {
+	color: $blue; 
+	font-size: 14px; 
+	font-weight: bold; 
+	margin: 8px 0px 0px 0px; 
+	padding: 8px 0px 0px 0px;
+	line-height: normal;
+	font-family: $round_font;
+}
+
+.right h3 {
+	margin: 0px 0px 3px 0px;
+	padding-top: 0px;
+	line-height: 17px;
+}
+
+
+/*--Image Styles--*/
+.image_right {
+	float: right; 
+	margin: 12px 0px 8px 30px;
+}
+
+.image_left {
+	float: left; 
+	margin: 12px 30px 8px 0px;
+}

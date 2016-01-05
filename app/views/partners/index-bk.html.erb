@@ -1,0 +1,16 @@
+<h1><%= title("Partners") %></h1>
+<p><strong>The successful development and implementation of the Academy has been possible through a positive partnership approach with key organsations. </strong></p>
+<p>This approach has enabled a strong commitment to taking the model forward with organisations sharing expertise and resources free of charge.</p>
+<p>The Care Quality Commission are one of our key partners and will also act as a vehicle to drive up standards of care through their monitoring process.</p>
+<% unless @partners.empty? %>
+	<% @partners.each do |partner| %>
+		<%= render "partners/partner", :partner => partner %>
+		<div class="hr"><hr /></div>
+	<% end %>
+<% else %>
+	
+<% end %>
+
+<% content_for :right do %>
+	<%= render 'events/shared/event', :events => @events %>
+<% end %>

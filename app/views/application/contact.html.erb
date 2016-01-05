@@ -1,0 +1,38 @@
+<h1><%= title(@page.title) %></h1>
+
+<% if flash[:alert] %>
+	<p><%= flash[:alert] %></p>
+<% end %>
+
+<% if @page.image? %>
+	<%= image_tag(@page.image.show, {:alt => @page.image_alt, :title => @page.image_alt, :class => "image_left"}) %>
+<% end %>
+<%= raw(@page.content) %>
+
+<%= form_tag do %>
+	<div class="field">
+		<%= label_tag :name, "Name" %> <span>*</span><br />
+		<%= text_field_tag :name, params[:name] %>
+	</div>
+	<div class="field">
+		<%= label_tag :telephone %><br />
+		<%= text_field_tag :telephone, params[:telephone] %>
+	</div>
+	<div class="field">
+		<%= label_tag :email %><br />
+		<%= text_field_tag :email, params[:email] %>
+	</div>
+	<div class="field">
+		<%= label_tag :enquiry, "Enquiry" %> <span>*</span><br />
+		<%= text_area_tag :enquiry, params[:enquiry], {:rows => 5, :cols => 30} %>
+	</div>	
+	<div class="actions">
+		<%= submit_tag "Submit" %>
+	</div>
+  <br />
+  <p><span>*</span> Required fields</p>
+<% end %>
+
+<% content_for :right do %>
+	<%= render 'events/shared/event', :events => @events %>
+<% end %>

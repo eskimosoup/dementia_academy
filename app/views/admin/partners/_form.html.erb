@@ -1,0 +1,37 @@
+<%= form_for([:admin, @partner]) do |f| %>
+	
+  <%= f.error_messages %>
+	
+	<%= field_set_tag("Basic Information") do %>
+    <div class="field">
+      <%= f.label :title %><br />
+      <%= f.text_field :title %>
+    </div>
+    <div class="field">
+      <%= f.label :web, "Web address" %><br />
+      <%= f.text_field :web, {:placeholder => "e.g. http://www.eskimosoup.co.uk"} %>
+    </div>
+    <div class="field">
+      <%= f.label :summary %><br />
+      <%= f.text_area :summary %>
+    </div>
+    <div class="field">
+      <%= f.check_box :display %>&nbsp;<%= f.label :display %>
+    </div>
+  <% end %>
+	
+	<%= field_set_tag("Image") do %>
+    <div class="field">
+      <%= f.image_field :image %>
+    </div>
+		<div class="field">
+			<%= f.label :image_alt %><br />
+			<%= f.text_field :image_alt %>
+    </div>
+	<% end %>
+	
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+	
+<% end %>

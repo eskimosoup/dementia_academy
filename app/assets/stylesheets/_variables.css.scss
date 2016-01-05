@@ -1,0 +1,21 @@
+$main_font: Arial, Tahoma, sans-serif;
+$round_font: "Century Gothic", Arial, sans-serif;
+$blue: #0c568c;
+$green: #137d99;
+$grey: #acacac;
+
+@mixin zero {
+	padding: 0px; 
+	margin: 0px; 
+	border: 0px;
+}
+
+@mixin black_link {
+		a {
+			color: #000000;
+			text-decoration: none;
+			font-weight: bold;
+			&:visited, &:active {color: #000000;}
+			&:hover {color: $green; text-decoration: underline; font-weight: bold;}
+		}
+}

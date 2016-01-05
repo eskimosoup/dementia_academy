@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head></head>
+	<body>
+		<h1>Someone has completed the contact form on <a href="http://dementiaacademy.co.uk" target="_blank">Dementia Academy</a></h1>
+		<h2>Name</h2>
+		<p><%= @name %></p>
+		<% unless @tel.blank? %>
+			<h2>Telephone</h2>
+			<p><%= @tel %></p>
+		<% end %>
+		<% unless @email.blank? %>
+			<h2>Email</h2>
+			<p><%= mail_to(@email) %></p>
+		<% end %>
+		<% unless @enquiry.blank? %>
+			<h2>Enquiry</h2>
+			<p><%= @enquiry %></p>
+		<% end %>
+	</body>
+</html>

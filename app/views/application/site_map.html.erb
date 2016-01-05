@@ -1,0 +1,15 @@
+<% hide_flash %>
+
+<h1><%= title("Site Map") %></h1>
+
+<ul>
+  <% @branches.each do |branch| %>
+    <li>
+      <%= ("&nbsp;&nbsp;&nbsp;&nbsp;" * branch.depth).html_safe %><%= link_to branch.name.gsub("<br />", ""), branch.destination %>
+    </li>
+  <% end %>
+</ul>
+
+<% content_for :right do %>
+	<%= render 'events/shared/event', :events => @events %>
+<% end %>

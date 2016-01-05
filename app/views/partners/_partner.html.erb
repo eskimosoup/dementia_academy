@@ -1,0 +1,10 @@
+<div class="partner">
+	<% if partner.image? %>
+		<%= image_tag(partner.image.index, {:alt => partner.image_alt, :title => partner.image_alt, :class => "image_left"}) %>
+	<% end %>
+	<h2><%= partner.title %></h2>
+	<% unless partner.web.blank? %>
+		<span><%= link_to partner.web, partner.web, {:target => "_blank"} %></span>
+	<% end %>
+	<%= partner.summary %>
+</div>

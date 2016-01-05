@@ -1,0 +1,10 @@
+<% title("Partners") %>
+
+<div class="admin_functions">
+  <%= link_to "New Partner", new_admin_partner_path %>
+</div>
+
+<%= informant_table @partners, {
+      :headings => ['', 'Title', 'Web', 'Displayed?', '', '', ''], 
+      :body     => [it_sort, :title, lambda{|partner| partner.web.blank? ? "" : link_to(partner.web, partner.web, {:target => "_blank"})}, it_ajax_toggle(:display), it_edit_images, it_edit, it_destroy]
+    } %>

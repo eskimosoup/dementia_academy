@@ -1,0 +1,11 @@
+<h2><%= link_to "Events", events_path %></h2>
+<% events.each do |event| %>
+	<div class="event_right">
+		<% if event.image? %>
+			<%= link_to(image_tag(event.image.home, {:alt => event.image_alt, :title => event.image_alt}), event) %>
+		<% end %>
+		<h3><%= link_to(event.title, event) %></h3>
+		<%= event.summary %>
+		<p align="right"><%= link_to "Read more", event %></p>
+	</div>
+<% end %>

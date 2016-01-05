@@ -1,0 +1,15 @@
+<div class="event_main">
+	<div class="event_date">
+		<%= l(event.date_start, {:format => :long}) %>
+    <% if event.date_end && (event.date_end != event.date_start) %>
+      - <%= l(event.date_end, {:format => :long}) %>
+    <% end %>
+	</div>
+	<% if event.image? %>
+		<%= link_to(image_tag(event.image.index, {:alt => event.image_alt, :title => event.image_alt}), event) %>
+	<% end %>
+	<h2><%= link_to(event.title, event) %></h2>
+	<strong><%= event.venue %></strong>
+	<br /><%= event.summary %>
+	<p align="right"><%= link_to "Read more", event %></p>
+</div>

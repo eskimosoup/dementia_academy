@@ -1,0 +1,1 @@
+var tinyMCEImageList=new Array(["The Dementia Academy Diagram","/uploads/chronicler/image/image/1/dementia_diagram.png"],["Facebook Link","/uploads/chronicler/image/image/3/Facebook-logo-ICON-02-300x300_1_.png"]);

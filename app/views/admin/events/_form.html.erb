@@ -1,0 +1,57 @@
+<%= form_for([:admin, @event]) do |f| %>
+	
+  <%= f.error_messages %>
+	
+  <%= field_set_tag("Basic Information") do %>
+    <div class="field">
+			<%= f.label :title %><br />
+			<%= f.text_field :title %>
+		</div>
+    <div class="field">
+			<%= f.label :venue %><br />
+			<%= f.text_field :venue %>
+		</div>
+		<div class="field">
+			<%= f.label :price, raw("Price (&pound;s)") %><br />
+			<%= f.text_field :price, {:placeholder => "Must be a decimal. Leave this field blank if the event is free."} %>
+		</div>
+		<div class="field">
+			<%= f.label :summary %><br />
+			<%= f.text_area :summary %>
+		</div>
+		<div class="field">
+			<%= f.label :content %><br />
+			<%= f.text_area :content, :class => "tinymce" %>
+		</div>
+  <% end %>
+  
+	<%= field_set_tag("Dates") do %>
+		<div class="field">
+			<%= f.label :date_start %><br />
+			<% date = (f.object.date_start || Date.today) %>
+      <%= f.text_field :date_start, :class => "datepicker", :value => l(date) %>
+		</div>
+		<div class="field">
+			<%= f.label :date_end %><br />
+			<% date = (f.object.date_end || Date.today) %>
+      <%= f.text_field :date_end, :class => "datepicker", :value => l(date) %>
+		</div>
+	<% end %>
+	
+	<%= field_set_tag("Image") do %>
+    <div class="field">
+      <%= f.image_field :image %>
+    </div>
+		<div class="field">
+			<%= f.label :image_alt %><br />
+			<%= f.text_field :image_alt %>
+    </div>
+	<% end %>
+	
+  <%= render 'admin/shared/seo_fields', :f => f %>
+	
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  
+<% end %>

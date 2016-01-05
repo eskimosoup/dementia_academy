@@ -1,0 +1,41 @@
+<%= form_for([:admin, @page]) do |f| %>
+	
+  <%= f.error_messages %>
+  
+  <%= field_set_tag("Page Layout") do %>
+    <div class="field">
+      <%= f.label :layout %><br />
+      <%= f.select :layout, Page.layouts.map{ |x| [t(x), x] } %>
+    </div>
+
+    <%= f.hidden_field :style, :value => "basic" %>
+  <% end %>
+	
+  <%= field_set_tag("Main Content") do %>
+    <div class="field">
+      <%= f.label :title %><br />
+      <%= f.text_field :title %>
+    </div>
+    <div class="field">
+      <%= f.label :content %><br />
+      <%= f.text_area :content, :class => "tinymce" %>
+    </div>
+  <% end %>
+  
+  <%= field_set_tag("Image") do %>
+    <div class="field">
+      <%= f.image_field :image %>
+    </div>
+		<div class="field">
+			<%= f.label :image_alt %><br />
+			<%= f.text_field :image_alt %>
+    </div>
+  <% end %>
+	
+	<%= render 'admin/shared/seo_fields', :f => f %>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  
+<% end %>

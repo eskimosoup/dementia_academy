@@ -1,0 +1,1 @@
+function sendUpload(){url="/test",data={name:$("#name").attr("value")},$.get(url,data,function(){})}tinyMCE.addI18n("en.imageupload_dlg",{title:"Upload Image"});

@@ -1,0 +1,10 @@
+<% title("Events") %>
+
+<div class="admin_functions">
+  <%= link_to "New Event", new_admin_event_path %>
+</div>
+
+<%= informant_table @events, {
+      :headings => ['Title', 'Venue', 'Price', 'Start date', 'End date', 'Displayed?', '', '', ''],
+      :body     => [:title, :venue, lambda{|event| event.proper_price}, lambda{|event| l(event.date_start)}, lambda{|event| l(event.date_end)}, it_ajax_toggle(:display), it_edit_images, it_edit, it_destroy]
+    } %>

@@ -1,0 +1,11 @@
+<h1><%= title("Events") %></h1>
+
+<% unless @events.empty? %>
+	<% @events.each do |event| %>
+		<%= render "events/event", :event => event %>
+		<hr />
+	<% end %>
+  <%= paginate(@events) %>
+<% else %>
+	<p>No events to display.</p>
+<% end %>

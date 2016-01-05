@@ -1,0 +1,10 @@
+<div class="footer_left">
+	<% Willow::Branch.where(tree: "Footer").roots.each_with_index do |branch, index| %>
+		<%= link_to branch.name, branch.destination %> | 
+	<% end %>
+	<%= link_to "Web design by eskimosoup", "http://www.eskimosoup.co.uk", :target => "_blank" %>
+</div>
+<div class="footer_right">
+	<%= image_tag("logo_hull_city_council.gif", :alt=>"Hull City Council") %>
+	<%= image_tag("logo_nhs.gif", :alt=>"NHS") %>
+</div>

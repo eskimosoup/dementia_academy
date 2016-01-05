@@ -1,0 +1,10 @@
+<ul>
+	<% Willow::Branch.where(tree: 'Main').roots.order(:position).each do |branch| %>
+		<% klasses = [] %>
+		<% klasses << "no_pad" if branch.name.include?("<br />") %>
+		<li>
+			<% klasses << "highlight" if (@current_leaf and @current_leaf.branch) and (@current_leaf.branch == branch or @current_leaf.branch.parent == branch) %>
+			<%= link_to raw(branch.name), branch.destination, (klasses.empty? ? {} : {:class => klasses.join(' ')}) %>
+		</li>
+	<% end %>
+</ul>

@@ -1,0 +1,9 @@
+<h1><%= title("Thank you") %></h1>
+
+<% if flash[:notice] %>
+	<p><%= flash[:notice] %></p>
+<% end %>
+
+<% content_for :right do %>
+	<%= render 'events/shared/event', :events => @events %>
+<% end %>

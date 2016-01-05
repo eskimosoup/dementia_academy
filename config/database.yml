@@ -1,0 +1,18 @@
+development:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: dementia_academy_development
+  pool: 5
+  username: root
+  password: tmedia
+  host: 192.168.0.122
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: dementia_dementia
+  pool: 5
+  username: dementia
+  password: deme47#!

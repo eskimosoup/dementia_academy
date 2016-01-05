@@ -1,0 +1,1 @@
+tinyMCEPopup.requireLangPack();var ImageUploadDialog={init:function(){document.forms[0]}};tinyMCEPopup.onInit.add(ImageUploadDialog.init,ImageUploadDialog),globalvar=window,setTimeout("globalvar.focus()",250);
