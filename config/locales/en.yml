@@ -88,7 +88,7 @@ en:
     currency:
       format:
         format: "%u%n"
-        unit: "£"
+        unit: "Â£"
         separator: "."
         delimiter: ","
         precision: 2
