@@ -1,9 +1,9 @@
 DementiaAcademy::Application.configure do
-
-  config.action_mailer.default_url_options = { :host => 'dementia.ludo3.co.uk' }
+  config.logger = Logger.new(config.paths['log'].first, 3, 5_242_880)
+  config.action_mailer.default_url_options = { host: 'dementia.ludo3.co.uk' }
 
   ActionMailer::Base.delivery_method = :sendmail
-  ActionMailer::Base.sendmail_settings = { :location => '/usr/lib/sendmail', :arguments => '-i -v' }
+  ActionMailer::Base.sendmail_settings = { location: '/usr/lib/sendmail', arguments: '-i -v' }
 
   # Settings specified here will take precedence over those in config/application.rb
 
